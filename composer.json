@@ -1,6 +1,6 @@
 {
   "name": "bclibraries/search-client",
-  "description": "Client for keyword searches of JSON APIs",
+  "description": "Client for searching Boston College Libraries API-enabled services",
   "authors": [
     {
       "name": "Benjamin Florin",
