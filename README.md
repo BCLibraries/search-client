@@ -5,7 +5,7 @@ Perform parallel searches of API-enabled Boston College Libraries services.
 Install with [Composer](https://getcomposer.org/):
 
 ```shell
-composer require bclibraries/search-client::^1.0
+composer require bclibraries/search-client:^1.0
 ```
 
 ## Usage
