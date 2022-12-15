@@ -1,0 +1,36 @@
+{
+  "name": "bclibraries/search-client",
+  "description": "Client for keyword searches of JSON APIs",
+  "authors": [
+    {
+      "name": "Benjamin Florin",
+      "email": "benjamin.florin@bc.edu"
+    }
+  ],
+  "license": "MIT",
+  "require": {
+    "php": "^7.2.0"
+  },
+  "require-dev": {
+
+  },
+  "autoload": {
+    "psr-4": {
+      "BCLib\\SearchClient\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "BCLib\\SearchClient\\Tests\\": "test"
+    }
+  },
+  "config": {
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true,
+    "platform": {
+      "php": "7.2.11"
+    }
+  }
+}
