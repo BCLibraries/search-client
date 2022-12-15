@@ -8,6 +8,7 @@ use BCLib\SearchClient\Service;
 
 class JesuitOnlineBibliographyService implements Service
 {
+    public const LABEL = 'jesuit-online-bibliography';
 
     /**
      * @inheritDoc

@@ -18,35 +18,30 @@ $result = $client->search($keyword);
 
 // Iterate through the results and show the values.
 foreach ($result as $response) {
-
-    $response_class = get_class($response);
-
-    echo "$response_class\n";
+    echo "{$response->getServiceLabel()}\n";
     $items = $response->getItems();
     $count = count($items);
 
     echo "  retrieved $count of  {$response->getTotalCount()} results\n";
     echo "  URL is {$response->getWebSearchURL($keyword)}\n";
 
-    // Show the top three results, with title, description, and URL.
+    // Show the items, with title, URL, and other info as needed.
     echo "  top results:\n";
-    for ($j = 0; $j < 3; $j++) {
-        if (! isset($items[$j])) {
-            continue;
-        }
-        echo "    {$items[$j]->getTitle()}\n    {$items[$j]->getUrl()}\n";
+    foreach($items as $item) {
+
+        echo "    {$item->getTitle()}\n";
+        echo "    {$item->getUrl()}\n";
 
         // Show special data depending on result type.
-        if ($response_class === 'BCLib\SearchClient\Implementations\JesuitOnlineNecrologyResponse') {
-            echo "      {$items[$j]->getDescription()}\n";
+        if ($item->getServiceLabel() === Services\JesuitOnlineNecrologyService::LABEL) {
+            echo "      {$item->getDescription()}\n";
         }
 
-        if ($response_class === 'BCLib\SearchClient\Implementations\JesuitOnlineBibliographyResponse') {
-            echo "      {$items[$j]->getAuthor()}\n";
-            echo "      {$items[$j]->getFormat()}\n";
-            echo "      {$items[$j]->getYear()}\n";
+        if ($item->getServiceLabel() === Services\JesuitOnlineBibliographyService::LABEL) {
+            echo "      {$item->getAuthor()}\n";
+            echo "      {$item->getFormat()}\n";
+            echo "      {$item->getYear()}\n";
         }
     }
-
     echo "\n";
 }

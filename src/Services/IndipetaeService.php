@@ -7,6 +7,7 @@ use BCLib\SearchClient\Service;
 
 class IndipetaeService implements Service
 {
+    const LABEL = 'indipetae';
 
     /**
      * @inheritDoc

@@ -37,4 +37,9 @@ class JesuitOnlineNecrologyResponse extends Response
         ];
         return $url_base . '?' . http_build_query($url_params);
     }
+
+    function getServiceLabel(): string
+    {
+        return JesuitOnlineNecrologyService::LABEL;
+    }
 }

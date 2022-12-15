@@ -29,9 +29,9 @@ class JesuitOnlineNecrologyItem extends Item
         return "https://jesuitonlinenecrology.bc.edu/catalog/$id";
     }
 
-    public function getType(): string
+    public function getServiceLabel(): string
     {
-        return 'jesuit-online-necrology';
+        return JesuitOnlineNecrologyService::LABEL;
     }
 
     /**

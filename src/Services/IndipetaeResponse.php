@@ -2,9 +2,10 @@
 
 namespace BCLib\SearchClient\Services;
 
-class IndipetaeResponse extends \BCLib\SearchClient\Response
-{
+use BCLib\SearchClient\Response;
 
+class IndipetaeResponse extends Response
+{
     /**
      * Always returns null, because Indipetae API does not provide total count
      */
@@ -29,5 +30,10 @@ class IndipetaeResponse extends \BCLib\SearchClient\Response
     public function getWebSearchURL(string $keyword): string
     {
         return "https://indipetae.bc.edu/elasticsearch/search/index?q=$keyword";
+    }
+
+    function getServiceLabel(): string
+    {
+        return IndipetaeService::LABEL;
     }
 }

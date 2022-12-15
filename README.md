@@ -25,6 +25,15 @@ $client = new Client($services);
 $responses = $client->search("paris");
 
 foreach ($responses as $response) {
+
+    // Link to search on Web.
+    $search_url = $response->getWebSearchURL("paris");
+    $total_count = $response->getTotalCount();
     
+    // Iterate through the response items.
+    foreach ($response->getItems() as $item) {
+        $title = $item->getTitle();
+        $item_url = $item->getUrl();
+    }
 }
 ```

@@ -25,9 +25,9 @@ class IndipetaeItem extends Item
         return "https://indipetae.bc.edu/items/show/$id";
     }
 
-    public function getType(): string
+    public function getServiceLabel(): string
     {
-        return 'indipetae';
+        return IndipetaeService::LABEL;
     }
 
     private function buildElementsMap()

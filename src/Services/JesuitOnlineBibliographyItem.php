@@ -30,9 +30,9 @@ class JesuitOnlineBibliographyItem extends Item
         return "https://jesuitonlinebibliography.bc.edu/catalog/$id";
     }
 
-    public function getType(): string
+    public function getServiceLabel(): string
     {
-        return 'jesuit-online-bibliography';
+        return JesuitOnlineBibliographyService::LABEL;
     }
 
     public function getAuthor(): string

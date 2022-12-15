@@ -45,4 +45,11 @@ abstract class Response
      * @return string
      */
     abstract public function getWebSearchURL(string $keyword): string;
+
+    /**
+     * Get the response's type (e.g. "jesuit-online-bibliography")
+     *
+     * @return string
+     */
+    abstract function getServiceLabel(): string;
 }

@@ -6,7 +6,6 @@ use BCLib\SearchClient\Response;
 
 class JesuitOnlineBibliographyResponse extends Response
 {
-
     /**
      * @inheritDoc
      */
@@ -37,5 +36,10 @@ class JesuitOnlineBibliographyResponse extends Response
             'q' => $keyword
         ];
         return $url_base . '?' . http_build_query($url_params);
+    }
+
+    function getServiceLabel(): string
+    {
+        return JesuitOnlineBibliographyService::LABEL;
     }
 }
